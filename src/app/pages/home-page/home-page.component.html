@@ -1,0 +1,5 @@
+<div class="wrapper">
+  <h2>Welcome</h2>
+  <input type="text" placeholder="owner/repositoryName" [(ngModel)]="inputValue" [class.error]="inputError()">
+  <button (click)="onSubmit()" [disabled]="inputError()">Submit</button>
+</div>

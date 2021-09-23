@@ -1,0 +1,42 @@
+<div class="wrapper" >
+  <div class="search">
+    <input type="text" placeholder="owner/repositoryName" [(ngModel)]="inputValue" [class.error]="inputError()">
+    <button (click)="onSubmit()" [disabled]="inputError()">Submit</button>
+  </div>
+  <div class="result" *ngIf="!notFound">
+
+    <!-- <div *ngFor="let item of data">
+      <span>{{item.full_name}}</span>
+      <a [href]="item.owner.html_url">Owner</a>
+      <a [href]="item.html_url">Fork Link</a>
+    </div> -->
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Fork Link</th>
+      </tr>
+      <ng-container *ngFor="let item of data">
+        <tr>
+          <td>{{item.full_name}}</td>
+          <td><a target="blank" [href]="item.owner.html_url">Owner</a></td>
+          <td><a target="blank" [href]="item.html_url">Fork Link</a></td>
+        </tr>
+      </ng-container>
+    </table>
+
+
+    <mat-paginator [length]="allDataLength"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 50]"
+              aria-label="Select page"
+              (page)="onPageChange($event)">
+    </mat-paginator>
+
+  </div>
+
+  <span class="notFound" *ngIf="notFound">Not Found</span>
+
+</div>
+
