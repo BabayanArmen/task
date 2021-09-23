@@ -16,5 +16,4 @@ export class DataService {
     return this.http.get(`https://api.github.com/repos/${owner}/${repoName}/forks?page=${page}&per_page=${perPage}`, {observe: 'response'});
   }
 
-
 }

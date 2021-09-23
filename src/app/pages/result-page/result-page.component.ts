@@ -41,23 +41,10 @@ export class ResultPageComponent implements OnInit {
   }
 
   onSubmit() {
+    if(this.inputValue == undefined || this.inputValue.trim() == "")  return;
     this.owner = this.inputValue.split('/')[0];
     this.repoName = this.inputValue.split('/')[1];
-    // this.page = 1;
-    // this.perPage = 10;
-    // this.dataService.getDataPerPage(this.owner, this.repoName, this.page, this.perPage).subscribe(res => {
-    //   this.data = res.body as any
-    //   this.notFound = false;
-    // },
-    // (error) => {
-    //   console.log(error.status);
-    //   if(error.status == 404) {
-    //     this.notFound = true;
-    //   }
-    // })
     this.dataService.getAllData(this.owner, this.repoName).subscribe(res => {
-      console.log(res.body);
-
       this.allDataLength = (res.body as any).length;
       this.data = (res.body as any).slice(0, 10)
       console.log(this.data);

@@ -25,6 +25,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onSubmit() {
+    if(this.inputValue == undefined || this.inputValue.trim() == "")  return;
     let owner = this.inputValue.split('/')[0];
     let repoName = this.inputValue.split('/')[1];
     this.router.navigate(['/result'],  { queryParams: { owner, repoName }})

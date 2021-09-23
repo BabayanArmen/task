@@ -1,5 +1,9 @@
 <div class="wrapper">
-  <h2>Welcome</h2>
-  <input type="text" placeholder="owner/repositoryName" [(ngModel)]="inputValue" [class.error]="inputError()">
-  <button (click)="onSubmit()" [disabled]="inputError()">Submit</button>
+  <div class="header">
+    <h2>Welcome</h2>
+  </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput placeholder="owner/repositoryName" [(ngModel)]="inputValue" [class.error]="inputError()">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="inputError()">Submit</button>
 </div>

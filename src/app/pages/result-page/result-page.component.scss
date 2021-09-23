@@ -6,17 +6,36 @@
 .error{
   color: red;
 }
-// table
+.search{
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 8px 0px rgb(196, 196, 196);
+  position: fixed;
+  top: 0px;
+  padding: 8px;
+  input{
+    width: 500px;
+    outline-color: blue;
+    margin-right: 3px;
+  }
+  button{
+    background-color: rgb(35, 112, 226);
+    color: white;
+    border-radius: 3px;
+    outline: none;
+  }
+}
+.result{
+  padding-top: 45px;
+}
 table, td, th {
   border: 1px solid #ddd;
   text-align: left;
 }
-
 table {
   border-collapse: collapse;
   width: 100%;
 }
-
 th, td {
   padding: 15px;
 }
